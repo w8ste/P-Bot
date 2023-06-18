@@ -2,6 +2,7 @@ import discord
 import responses
 from discord import app_commands
 from itertools import cycle
+
 # list to handle turns
 players = ["player0", "player1"]
 myIterator = cycle(range(2))
@@ -18,15 +19,14 @@ async def send_message(message, user_message):
 
 
 def run_discord_bot():
-    TOKEN = 'MTExODIyOTEwNzU4MzUwNDQyNQ.GG9ZpM.daLQlfhgdYA83w64fizkHVzrg76T8liB98q5DU'
+    TOKEN = 'your token'
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
     tree = app_commands.CommandTree(client)
     guild_id = 1118228930160242750
 
-
-    # Handels general bot usage
+    # Handles general bot usage
     @client.event
     async def on_ready():
         await tree.sync(guild=discord.Object(id=guild_id))
