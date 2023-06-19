@@ -14,4 +14,5 @@ def handle_response(massage) -> str:
             else:
                 p_array.append(p_massage)
                 return f'Good Job, {p_massage} is a new word'
+    return ""
 
