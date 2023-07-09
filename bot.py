@@ -3,9 +3,7 @@ import responses
 from discord import app_commands
 from itertools import cycle
 
-# list to handle turns
-players = ["player0", "player1"]
-myIterator = cycle(range(2))
+
 
 
 # Send messages
@@ -53,6 +51,6 @@ def run_discord_bot():
 
     @tree.command(name="turn", description="Tells you, whose turn it is", guild=discord.Object(id=guild_id))
     async def turn_command(interaction):
-        await interaction.response.send_message(f'It is {players[myIterator.__next__()]}\'s turn')
+        await interaction.response.send_message(f'It is {responses.turn()}\'s turn')
 
     client.run(TOKEN)
