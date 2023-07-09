@@ -22,7 +22,7 @@ def run_discord_bot():
     intents.message_content = True
     client = discord.Client(intents=intents)
     tree = app_commands.CommandTree(client)
-    guild_id = 1118228930160242750
+    guild_id = your guild_id
 
     # Handles general bot usage
     @client.event
